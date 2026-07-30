@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, MapPin, CheckCircle, Loader2, MessageSquare } from "lucide-react";
+import { Send, Mail, MapPin, CheckCircle, Loader2, MessageSquare, Phone } from "lucide-react";
 import { LinkedinIcon } from "@/components/ui/LinkedinIcon";
 import { GithubIcon } from "@/components/ui/GithubIcon";
 import { personalInfo } from "@/lib/data";
@@ -22,6 +22,15 @@ const contactLinks = [
     color: "text-blue-400",
     bg: "from-blue-500/10 to-transparent",
     border: "border-blue-500/20",
+  },
+  {
+    icon: Phone,
+    label: "Phone",
+    value: personalInfo.phone,
+    href: `tel:${personalInfo.phone}`,
+    color: "text-emerald-400",
+    bg: "from-emerald-500/10 to-transparent",
+    border: "border-emerald-500/20",
   },
   {
     icon: LinkedinIcon,
