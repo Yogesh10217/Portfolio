@@ -19,7 +19,7 @@ const pinnedRepos = [
     langColor: "#3572A5",
     stars: 12,
     forks: 3,
-    url: "https://github.com/yogeshe/krama-ai",
+    url: "https://github.com/Yogesh10217/krama-ai",
   },
   {
     name: "llm-inference-engine",
@@ -28,7 +28,7 @@ const pinnedRepos = [
     langColor: "#3572A5",
     stars: 8,
     forks: 2,
-    url: "https://github.com/yogeshe/llm-inference-engine",
+    url: "https://github.com/Yogesh10217/llm-inference-engine",
   },
   {
     name: "ai-research-tool",
@@ -37,7 +37,7 @@ const pinnedRepos = [
     langColor: "#2b7489",
     stars: 6,
     forks: 1,
-    url: "https://github.com/yogeshe/ai-research-tool",
+    url: "https://github.com/Yogesh10217/ai-research-tool",
   },
   {
     name: "portfolio",
@@ -46,7 +46,7 @@ const pinnedRepos = [
     langColor: "#2b7489",
     stars: 4,
     forks: 0,
-    url: "https://github.com/yogeshe/portfolio",
+    url: "https://github.com/Yogesh10217/portfolio",
   },
 ];
 

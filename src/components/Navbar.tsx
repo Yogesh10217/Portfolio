@@ -107,7 +107,7 @@ export default function Navbar() {
             {/* Desktop Social + CTA */}
             <div className="hidden md:flex items-center gap-3">
               <a
-                href="https://github.com/yogeshe"
+                href="https://github.com/Yogesh10217"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-zinc-400 hover:text-white transition-colors p-1.5 rounded-lg hover:bg-white/10"
@@ -115,7 +115,7 @@ export default function Navbar() {
                 <GithubIcon size={18} />
               </a>
               <a
-                href="https://linkedin.com/in/yogeshe"
+                href="https://linkedin.com/in/eyogesh"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-zinc-400 hover:text-white transition-colors p-1.5 rounded-lg hover:bg-white/10"
@@ -165,10 +165,10 @@ export default function Navbar() {
                 </a>
               ))}
               <div className="flex items-center gap-3 pt-2 border-t border-zinc-800/50 mt-2">
-                <a href="https://github.com/yogeshe" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">
+                <a href="https://github.com/Yogesh10217" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">
                   <GithubIcon size={20} />
                 </a>
-                <a href="https://linkedin.com/in/yogeshe" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">
+                <a href="https://linkedin.com/in/eyogesh" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">
                   <LinkedinIcon size={20} />
                 </a>
                 <a href="mailto:yogeshe@example.com" className="text-zinc-400 hover:text-white transition-colors">
