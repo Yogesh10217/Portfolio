@@ -171,7 +171,7 @@ export default function Navbar() {
                 <a href="https://linkedin.com/in/eyogesh" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors">
                   <LinkedinIcon size={20} />
                 </a>
-                <a href="mailto:yogeshe@example.com" className="text-zinc-400 hover:text-white transition-colors">
+                <a href={`mailto:${"eyogesh104@gmail.com"}`} className="text-zinc-400 hover:text-white transition-colors">
                   <Mail size={20} />
                 </a>
               </div>

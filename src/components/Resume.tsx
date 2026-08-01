@@ -41,7 +41,7 @@ export default function Resume() {
             </div>
             <div className="flex items-center gap-2">
               <motion.a
-                href="/resume.pdf"
+                href="/Yogesh_E.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
@@ -51,7 +51,7 @@ export default function Resume() {
                 Preview
               </motion.a>
               <motion.a
-                href="/resume.pdf"
+                href="/Yogesh_E.pdf"
                 download
                 whileHover={{ scale: 1.05 }}
                 className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-sm transition-all glow-blue"
@@ -74,7 +74,7 @@ export default function Resume() {
               </p>
               <div className="flex items-center justify-center gap-3">
                 <motion.a
-                  href="/resume.pdf"
+                  href="/Yogesh_E.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
@@ -85,7 +85,7 @@ export default function Resume() {
                   Preview
                 </motion.a>
                 <motion.a
-                  href="/resume.pdf"
+                  href="/Yogesh_E.pdf"
                   download
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

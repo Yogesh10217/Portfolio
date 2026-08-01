@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Mail, Heart, ArrowUp } from "lucide-react";
 import { LinkedinIcon } from "@/components/ui/LinkedinIcon";
 import { GithubIcon } from "@/components/ui/GithubIcon";
+import { personalInfo } from "@/lib/data";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -29,9 +30,9 @@ export default function Footer() {
           {/* Social Links */}
           <div className="flex items-center gap-3">
             {[
-              { href: "https://github.com/yogeshe", icon: GithubIcon, label: "GitHub" },
-              { href: "https://linkedin.com/in/yogeshe", icon: LinkedinIcon, label: "LinkedIn" },
-              { href: "mailto:yogeshe@example.com", icon: Mail, label: "Email" },
+              { href: personalInfo.github, icon: GithubIcon, label: "GitHub" },
+              { href: personalInfo.linkedin, icon: LinkedinIcon, label: "LinkedIn" },
+              { href: `mailto:${personalInfo.email}`, icon: Mail, label: "Email" },
             ].map(({ href, icon: Icon, label }) => (
               <motion.a
                 key={label}

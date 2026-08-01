@@ -35,7 +35,7 @@ const contactLinks = [
   {
     icon: LinkedinIcon,
     label: "LinkedIn",
-    value: "linkedin.com/in/yogeshe",
+    value: "linkedin.com/in/eyogesh",
     href: personalInfo.linkedin,
     color: "text-sky-400",
     bg: "from-sky-500/10 to-transparent",
@@ -44,7 +44,7 @@ const contactLinks = [
   {
     icon: GithubIcon,
     label: "GitHub",
-    value: "github.com/yogeshe",
+    value: "github.com/Yogesh10217",
     href: personalInfo.github,
     color: "text-zinc-300",
     bg: "from-zinc-500/10 to-transparent",
@@ -74,8 +74,20 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormState("loading");
-    // Simulate form submission (replace with real API call / Formspree / EmailJS)
-    await new Promise((r) => setTimeout(r, 1500));
+
+    const subject = encodeURIComponent(`Portfolio Contact: ${form.subject}`);
+    const body = encodeURIComponent(
+      [
+        `Name: ${form.name}`,
+        `Email: ${form.email}`,
+        "",
+        `Message:\n${form.message}`,
+      ].join("\n")
+    );
+
+    window.location.href = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
+
+    await new Promise((r) => setTimeout(r, 1200));
     setFormState("success");
   };
 

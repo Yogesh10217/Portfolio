@@ -198,7 +198,7 @@ export default function Hero() {
             View Projects
           </motion.a>
           <motion.a
-            href="/resume.pdf"
+            href="/Yogesh_E.pdf"
             download
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
