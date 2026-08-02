@@ -32,7 +32,7 @@ The `deploy` script uses `gh-pages` to publish the contents of `out/` to the `gh
 4. Your site will be available at:
 
 ```text
-https://<your-username>.github.io/Portfolio/
+https://<yogesh10217>.github.io/Portfolio/
 ```
 
 ## Notes
