@@ -1,5 +1,5 @@
 export function withBasePath(path: string): string {
-  const basePath = process.env.NODE_ENV === "production" ? "/portfolio" : "";
+  const basePath = process.env.NODE_ENV === "production" ? "/Portfolio" : "";
 
   if (!path || path.startsWith("http") || path.startsWith("mailto:")) {
     return path;
