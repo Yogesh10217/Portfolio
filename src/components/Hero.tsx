@@ -7,6 +7,7 @@ import { Mail, ArrowDown, Download, ExternalLink } from "lucide-react";
 import { LinkedinIcon } from "@/components/ui/LinkedinIcon";
 import { GithubIcon } from "@/components/ui/GithubIcon";
 import { personalInfo } from "@/lib/data";
+import { withBasePath } from "@/lib/site";
 import BackgroundParticles from "./BackgroundParticles";
 
 const floatingTech = [
@@ -35,6 +36,7 @@ export default function Hero() {
   const scrollToNext = () => {
     document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
   };
+  const resumeHref = withBasePath("/Yogesh_E.pdf");
 
   return (
     <section
@@ -198,7 +200,7 @@ export default function Hero() {
             View Projects
           </motion.a>
           <motion.a
-            href="/Yogesh_E.pdf"
+            href={resumeHref}
             download
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

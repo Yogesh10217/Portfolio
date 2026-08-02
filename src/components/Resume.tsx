@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Download, FileText, Eye } from "lucide-react";
+import { withBasePath } from "@/lib/site";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -10,6 +11,8 @@ const fadeUp = {
 };
 
 export default function Resume() {
+  const resumeHref = withBasePath("/Yogesh_E.pdf");
+
   return (
     <section id="resume" className="section-padding relative">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,7 +44,7 @@ export default function Resume() {
             </div>
             <div className="flex items-center gap-2">
               <motion.a
-                href="/Yogesh_E.pdf"
+                href={resumeHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
@@ -51,7 +54,7 @@ export default function Resume() {
                 Preview
               </motion.a>
               <motion.a
-                href="/Yogesh_E.pdf"
+                href={resumeHref}
                 download
                 whileHover={{ scale: 1.05 }}
                 className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-sm transition-all glow-blue"
@@ -74,7 +77,7 @@ export default function Resume() {
               </p>
               <div className="flex items-center justify-center gap-3">
                 <motion.a
-                  href="/Yogesh_E.pdf"
+                  href={resumeHref}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
@@ -85,7 +88,7 @@ export default function Resume() {
                   Preview
                 </motion.a>
                 <motion.a
-                  href="/Yogesh_E.pdf"
+                  href={resumeHref}
                   download
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
