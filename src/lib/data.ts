@@ -4,14 +4,14 @@ export const personalInfo = {
   name: "Yogesh E",
   tagline: "Software Development Engineer",
   roles: [
-    "Backend Engineer",
+    "Founding Backend Engineer",
     "AI Infrastructure Builder",
     "Full Stack Developer",
     "Software Development Engineer",
   ],
   summary:
-    "I'm a final-year Information Science & Engineering student at Dayananda Sagar College of Engineering, passionate about building production-grade backend systems, AI infrastructure, and document processing pipelines. I enjoy taking products from idea to deployment — developing robust APIs, architecting scalable databases, and integrating intelligent LLM features that solve real-world problems.",
-  location: "Bengaluru, India",
+    "Software Development Engineer with experience building scalable backend systems, AI infrastructure, and production-grade APIs using Python, FastAPI, SQLAlchemy, PostgreSQL, and Docker. Skilled in designing clean, maintainable architectures and integrating LLM and OCR pipelines into real products. Strong foundation in Data Structures & Algorithms, distributed systems, OOP, and system design, with a track record of taking projects from concept to deployment.",
+  location: "Bangalore, India",
   email: "eyogesh104@gmail.com",
   phone: "+91-8050255818",
   github: "https://github.com/Yogesh10217",
@@ -23,7 +23,7 @@ export const techStack = [
   {
     category: "Backend",
     icon: "SERVER",
-    skills: ["Python", "FastAPI", "Node.js", "Express.js", "SQLAlchemy", "REST APIs"],
+    skills: ["Python", "FastAPI", "Node.js", "Express.js", "SQLAlchemy", "REST APIs", "Microservices"],
   },
   {
     category: "Languages",
@@ -43,43 +43,48 @@ export const techStack = [
   {
     category: "Frontend",
     icon: "UI",
-    skills: ["React.js", "Next.js", "Tailwind CSS", "HTML5", "CSS3"],
+    skills: ["React.js", "Tailwind CSS", "HTML5", "CSS3"],
   },
   {
     category: "AI / ML",
     icon: "AI",
-    skills: ["LLM Inference", "OpenAI", "Ollama", "OCR", "Gemini API"],
+    skills: ["LLMs", "Prompt Engineering", "OCR", "Google Gemini API"],
+  },
+  {
+    category: "Core CS",
+    icon: "CODE",
+    skills: ["Data Structures & Algorithms", "OOP", "DBMS", "Operating Systems", "Computer Networks", "System Design"],
   },
 ];
 
 export const experience = [
   {
-    year: "Jan 2026 – Present",
+    year: "Dec 2025 – Present",
     company: "Krama AI",
-    role: "Backend Engineer",
-    type: "Stealth AI Startup (Remote)",
+    role: "Founding Backend Engineer",
+    type: "Remote",
     description:
-      "Engineered an AI-powered insurance claims processing platform using FastAPI, SQLAlchemy, PostgreSQL, and Docker. Designed a scalable storage abstraction layer for secure document ingestion and lifecycle management, and built OCR and document conversion pipelines for multi-page insurance claims into structured data.",
-    tech: ["FastAPI", "SQLAlchemy", "PostgreSQL", "Docker", "Python"],
+      "Built an AI-powered insurance claims processing platform end-to-end using FastAPI, SQLAlchemy, PostgreSQL, and Docker. Designed a scalable storage abstraction layer for secure ingestion and lifecycle management, and built OCR/document-conversion pipelines. Developed REST APIs and asynchronous workflows with clean architecture and dependency injection. Strengthened backend reliability through structured logging and automated testing.",
+    tech: ["FastAPI", "SQLAlchemy", "PostgreSQL", "Docker", "Python", "OCR"],
     highlight: true,
   },
   {
     year: "Feb 2026 – Present",
     company: "KPMG",
     role: "ServiceNow Developer Intern",
-    type: "Internship (Bangalore, India)",
+    type: "Bangalore, India",
     description:
-      "Customized enterprise workflows using Flow Designer and server-side scripting. Developed Business Rules, Script Includes, UI Policies, Service Portal components, and REST API integrations. Collaborated with cross-functional teams to enhance enterprise ITSM workflows.",
+      "Customized enterprise ITSM workflows for client organizations using Flow Designer and server-side scripting. Built Business Rules, Script Includes, UI Policies, and Service Portal components. Integrated ServiceNow with external systems via REST APIs, and partnered with cross-functional teams.",
     tech: ["ServiceNow", "Flow Designer", "JavaScript", "REST APIs"],
-    highlight: false,
+    highlight: true,
   },
   {
     year: "2022 – 2026",
     company: "Dayananda Sagar College of Engineering",
     role: "B.E. Information Science & Engineering",
-    type: "Education (CGPA: 8.7/10)",
+    type: "Education (CGPA: 8.9/10)",
     description:
-      "Final year student with a strong focus on backend systems, distributed architectures, and AI integrations. Maintained excellent academic standing while building production-grade projects.",
+      "Information Science & Engineering with a strong focus on backend systems, distributed architectures, and AI integrations. Maintained excellent academic standing.",
     tech: ["Data Structures", "Algorithms", "OOP", "DBMS", "Operating Systems"],
     highlight: false,
   },
@@ -89,7 +94,7 @@ export const experience = [
     role: "PUC (PCMB)",
     type: "Education (94%)",
     description:
-      "Pre-University College in Physics, Chemistry, Mathematics, and Biology.",
+      "Pre-University College in Physics, Chemistry, Mathematics, and Biology (PCMB) - Sira, Tumkur.",
     tech: [],
     highlight: false,
   },
@@ -109,11 +114,11 @@ export const achievements = [
   {
     icon: "PAT",
     title: "Filed a Patent",
-    subtitle: "AI Research Architecture",
+    subtitle: "AI Architecture",
   },
   {
     icon: "GPA",
-    title: "CGPA 8.7/10",
+    title: "CGPA 8.9/10",
     subtitle: "Academic Excellence",
   },
 ];
@@ -124,9 +129,9 @@ export const projects = [
     title: "LLM Inference Engine",
     subtitle: "Multi-Provider LLM Orchestration Platform",
     description:
-      "Designed a modular multi-provider LLM inference platform supporting OpenAI and Ollama using Provider Factory, Request Router, and Model Registry.",
+      "Designed a modular, multi-provider LLM inference platform (OpenAI + Ollama) using a Provider Factory, Request Router, and Model Registry, with streaming APIs, structured logging, and health monitoring.",
     longDescription:
-      "Implemented provider abstraction, streaming APIs, dependency injection, structured logging, observability middleware, and health monitoring. Containerized the platform using Docker with automated CI-ready testing infrastructure.",
+      "Containerized the platform with Docker and set up CI-ready automated testing infrastructure. Implemented provider abstraction, streaming APIs, dependency injection, structured logging, and observability middleware.",
     featured: true,
     status: "Open Source",
     type: "AI",
@@ -165,12 +170,12 @@ export const projects = [
   },
   {
     id: "ai-research-tool",
-    title: "AI-Powered Research Tool",
+    title: "AI-Powered Research Tool & Fake News Detection",
     subtitle: "Fake News Detection SaaS",
     description:
-      "Developed a SaaS platform for AI-assisted academic research and fake news detection using NLP and Google Gemini API.",
+      "Built a SaaS platform combining AI-assisted academic research with fake news detection, using NLP and the Google Gemini API for content classification and semantic verification.",
     longDescription:
-      "Implemented AI-powered content classification and semantic verification workflows. Filed a patent for the platform's architecture and intelligent document analysis workflow.",
+      "Filed a patent for the platform's architecture and intelligent document-analysis workflow. Implemented AI-powered content classification and semantic verification workflows.",
     featured: true,
     status: "Production",
     type: "SaaS",
@@ -220,11 +225,10 @@ export const projects = [
     type: "Backend",
     github: "https://github.com/Yogesh10217",
     demo: null,
-    tech: ["Node.js", "Express.js", "MongoDB", "JWT", "bcrypt", "Upstash", "Nodemailer"],
+    tech: ["Node.js", "Express.js", "MongoDB", "JWT", "bcrypt", "Nodemailer"],
     features: [
       "JWT-based authentication system",
       "Bcrypt password encryption",
-      "Upstash background workflows",
       "Automated email reminders via Nodemailer",
       "Scalable MongoDB schema design",
       "Comprehensive error handling",
@@ -233,7 +237,7 @@ export const projects = [
       { step: "01", label: "Auth", desc: "JWT & bcrypt verification", icon: "AUTH" },
       { step: "02", label: "API", desc: "Express.js REST endpoints", icon: "API" },
       { step: "03", label: "Database", desc: "MongoDB dynamic schema", icon: "DB" },
-      { step: "04", label: "Workflows", desc: "Upstash scheduling", icon: "JOB" },
+      { step: "04", label: "Workflows", desc: "Background scheduling", icon: "JOB" },
       { step: "05", label: "Email", desc: "Nodemailer notifications", icon: "MAIL" },
     ],
     challenges: "Designing a database schema that efficiently handles varying subscription cycles (monthly, yearly, custom) while allowing fast queries for upcoming renewals.",
@@ -250,6 +254,6 @@ export const projects = [
           "The flexible document model allows for storing varying metadata associated with different types of subscriptions without strict schema migrations.",
       },
     ],
-    metrics: ["JWT Auth", "Upstash Workflows", "Dynamic Schema"],
+    metrics: ["JWT Auth", "Background Workflows", "Dynamic Schema"],
   },
 ];

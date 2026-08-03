@@ -29,12 +29,22 @@ export default function Navbar() {
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       setProgress(docHeight > 0 ? (scrollTop / docHeight) * 100 : 0);
 
+      // Check if we're at the very bottom of the page
+      if (scrollTop >= docHeight - 50) {
+        setActiveSection(navLinks[navLinks.length - 1].href.replace("#", ""));
+        return;
+      }
+
       const sections = navLinks.map((l) => l.href.replace("#", ""));
       for (const section of [...sections].reverse()) {
         const el = document.getElementById(section);
-        if (el && window.scrollY >= el.offsetTop - 120) {
-          setActiveSection(section);
-          break;
+        if (el) {
+          const topOffset = el.getBoundingClientRect().top + window.scrollY;
+          // Trigger when section reaches top third of viewport
+          if (window.scrollY >= topOffset - window.innerHeight / 3) {
+            setActiveSection(section);
+            break;
+          }
         }
       }
     };
