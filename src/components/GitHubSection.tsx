@@ -84,7 +84,7 @@ export default function GitHubSection() {
           </div>
           <div className="p-6">
             <img
-              src={`https://ghchart.rshah.org/8b5cf6/${personalInfo.githubUsername}`}
+              src={`https://ghchart.rshah.org/f97316/${personalInfo.githubUsername}`}
               alt="GitHub Contribution Graph"
               className="w-full h-auto opacity-60 hover:opacity-80 transition-opacity"
               style={{ imageRendering: "pixelated" }}

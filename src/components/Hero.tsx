@@ -89,7 +89,7 @@ function GradientRingPhoto() {
 
       {/* Photo */}
       <img
-        src="/profile.jpg"
+        src={withBasePath("/profile.jpg")}
         alt="Yogesh E"
         className="absolute inset-1.5 rounded-full object-cover object-top"
         style={{ width: "calc(100% - 12px)", height: "calc(100% - 12px)" }}
