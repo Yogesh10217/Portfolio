@@ -4,130 +4,79 @@ import { motion } from "framer-motion";
 import { Download, FileText, Eye } from "lucide-react";
 import { withBasePath } from "@/lib/site";
 
-const fadeUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-};
-
 export default function Resume() {
   const resumeHref = withBasePath("/Yogesh_E.pdf");
 
   return (
     <section id="resume" className="section-padding relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 glass rounded-full text-sm text-blue-400 border border-blue-500/20 mb-4">
-            <FileText size={14} />
-            Resume
-          </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            My{" "}
-            <span className="gradient-text">Resume</span>
+      <div className="max-w-4xl mx-auto px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
+          className="mb-14 text-center"
+        >
+          <p className="section-label mb-3">07 — Resume</p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#f8fafc] mb-5" style={{ fontFamily: "var(--font-jakarta)" }}>
+            Full Professional Profile
           </h2>
-          <p className="text-zinc-500">
-            Download or preview my latest resume.
+          <p className="text-[#475569] max-w-xl mx-auto">
+            Get a comprehensive view of my experience, skills, and academic background in standard PDF format.
           </p>
         </motion.div>
 
-        {/* Resume card */}
         <motion.div
-          {...fadeUp}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="glass rounded-2xl border border-zinc-800/60 overflow-hidden"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] as const }}
+          className="glass-card p-1 gradient-border overflow-hidden group"
         >
-          {/* Toolbar */}
-          <div className="px-6 py-4 border-b border-zinc-800/60 flex items-center justify-between">
-            <div className="flex items-center gap-2 text-zinc-300 font-semibold">
-              <FileText size={16} className="text-blue-400" />
-              Yogesh_E_Resume.pdf
-            </div>
-            <div className="flex items-center gap-2">
-              <motion.a
-                href={resumeHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                className="flex items-center gap-1.5 px-3 py-1.5 glass rounded-lg text-zinc-400 hover:text-white border border-zinc-700/60 hover:border-zinc-500/60 text-sm transition-all"
+          <div className="relative bg-[rgba(14,14,28,0.8)] rounded-[18px] min-h-[360px] flex items-center justify-center p-8 overflow-hidden">
+            {/* Ambient glows inside card */}
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,#f9731633,transparent_50%)] pointer-events-none" />
+            
+            <div className="relative z-10 text-center flex flex-col items-center max-w-md mx-auto">
+              <motion.div
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="w-20 h-20 rounded-3xl gradient-bg flex items-center justify-center shadow-2xl shadow-orange-500/30 mb-8"
               >
-                <Eye size={14} />
-                Preview
-              </motion.a>
-              <motion.a
-                href={resumeHref}
-                download
-                whileHover={{ scale: 1.05 }}
-                className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-sm transition-all glow-blue"
-              >
-                <Download size={14} />
-                Download
-              </motion.a>
-            </div>
-          </div>
+                <FileText size={36} className="text-white" />
+              </motion.div>
 
-          {/* PDF placeholder (replace with real embed when you have the PDF) */}
-          <div className="relative bg-zinc-900/60 min-h-[500px] flex items-center justify-center">
-            <div className="text-center py-20">
-              <div className="w-20 h-20 glass rounded-2xl flex items-center justify-center mx-auto mb-6 border border-zinc-700/60">
-                <FileText size={36} className="text-blue-400" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Resume Available</h3>
-              <p className="text-zinc-500 mb-6 max-w-xs mx-auto text-sm">
-                Click download below to get the full PDF resume, or preview it in a new tab.
+              <h3 className="text-2xl font-bold text-[#f8fafc] mb-3" style={{ fontFamily: "var(--font-jakarta)" }}>
+                Yogesh_E_Resume.pdf
+              </h3>
+              
+              <p className="text-[#94a3b8] text-sm mb-10 leading-relaxed">
+                Updated for 2026. Includes recent projects, Krama AI experience, and complete technical skill stack.
               </p>
-              <div className="flex items-center justify-center gap-3">
+
+              <div className="flex flex-col sm:flex-row items-center gap-4 w-full">
                 <motion.a
                   href={resumeHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2 px-5 py-2.5 glass border border-zinc-700/60 hover:border-zinc-500/60 text-zinc-300 hover:text-white rounded-xl text-sm font-semibold transition-all"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="flex-1 w-full flex items-center justify-center gap-2 py-3.5 rounded-xl border border-[rgba(255,255,255,0.08)] text-[#f8fafc] text-sm font-semibold hover:border-[rgba(249,115,22,0.3)] hover:bg-[rgba(249,115,22,0.06)] transition-all duration-300"
                 >
-                  <Eye size={16} />
-                  Preview
+                  <Eye size={16} /> Preview PDF
                 </motion.a>
                 <motion.a
                   href={resumeHref}
                   download
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-sm font-semibold transition-all glow-blue"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="flex-1 w-full flex items-center justify-center gap-2 py-3.5 rounded-xl gradient-bg text-white text-sm font-bold shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 glow-accent"
                 >
-                  <Download size={16} />
-                  Download PDF
+                  <Download size={16} /> Download
                 </motion.a>
               </div>
             </div>
           </div>
-        </motion.div>
-
-        {/* Quick summary */}
-        <motion.div
-          {...fadeUp}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-8 grid sm:grid-cols-3 gap-4"
-        >
-          {[
-            { label: "Education", value: "B.Tech · CGPA 8.7", icon: "🎓" },
-            { label: "Certifications", value: "ServiceNow CAD + CSA", icon: "🏆" },
-            { label: "Patent", value: "1 Filed · AI Research", icon: "📄" },
-          ].map(({ label, value, icon }, i) => (
-            <motion.div
-              key={label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 + i * 0.1 }}
-              className="glass rounded-xl p-4 border border-zinc-800/60 flex items-center gap-3"
-            >
-              <span className="text-2xl">{icon}</span>
-              <div>
-                <div className="text-zinc-500 text-xs">{label}</div>
-                <div className="text-zinc-200 text-sm font-semibold">{value}</div>
-              </div>
-            </motion.div>
-          ))}
         </motion.div>
       </div>
     </section>

@@ -7,10 +7,12 @@ import GitHubSection from "@/components/GitHubSection";
 import Resume from "@/components/Resume";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Cursor from "@/components/Cursor";
 
 export default function Home() {
   return (
     <main className="relative">
+      <Cursor />
       <Navbar />
       <Hero />
       <About />

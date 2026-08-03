@@ -1,206 +1,151 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star, GitFork, ExternalLink, Activity } from "lucide-react";
+import { Star, GitFork, ExternalLink, Package, Activity, Users } from "lucide-react";
 import { GithubIcon } from "@/components/ui/GithubIcon";
 import { personalInfo } from "@/lib/data";
 
-const fadeUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-};
-
-const pinnedRepos = [
-  {
-    name: "krama-ai",
-    description: "AI-powered claims processing platform with OCR and LLM orchestration",
-    language: "Python",
-    langColor: "#3572A5",
-    stars: 12,
-    forks: 3,
-    url: "https://github.com/Yogesh10217/krama-ai",
-  },
-  {
-    name: "llm-inference-engine",
-    description: "Multi-provider LLM orchestration layer with streaming and health checks",
-    language: "Python",
-    langColor: "#3572A5",
-    stars: 8,
-    forks: 2,
-    url: "https://github.com/Yogesh10217/llm-inference-engine",
-  },
-  {
-    name: "ai-research-tool",
-    description: "NLP-powered research assistant with fake news detection and Gemini AI",
-    language: "TypeScript",
-    langColor: "#2b7489",
-    stars: 6,
-    forks: 1,
-    url: "https://github.com/Yogesh10217/ai-research-tool",
-  },
-  {
-    name: "portfolio",
-    description: "Personal portfolio built with Next.js 15, Framer Motion, and Tailwind CSS",
-    language: "TypeScript",
-    langColor: "#2b7489",
-    stars: 4,
-    forks: 0,
-    url: "https://github.com/Yogesh10217/portfolio",
-  },
+const stats = [
+  { label: "Public Repos", value: "15+", icon: Package },
+  { label: "Stars Earned", value: "30+", icon: Star },
+  { label: "Contributions", value: "400+", icon: Activity },
+  { label: "Followers", value: "25+", icon: Users },
 ];
 
-const stats = [
-  { label: "Public Repos", value: "15+", icon: "📦" },
-  { label: "Total Stars", value: "30+", icon: "⭐" },
-  { label: "Contributions (2024)", value: "400+", icon: "📊" },
-  { label: "Followers", value: "25+", icon: "👥" },
+const pinnedRepos = [
+  { name: "llm-inference-engine", desc: "Multi-provider LLM orchestration with streaming APIs", lang: "Python", color: "#3572A5", stars: 8, forks: 2 },
+  { name: "ai-research-tool", desc: "NLP research assistant with fake-news detection", lang: "TypeScript", color: "#2b7489", stars: 6, forks: 1 },
+  { name: "subscription-tracker", desc: "Automated subscription management with Upstash workflows", lang: "JavaScript", color: "#F1E05A", stars: 5, forks: 1 },
+  { name: "portfolio", desc: "This portfolio — Next.js 15, Framer Motion", lang: "TypeScript", color: "#2b7489", stars: 4, forks: 0 },
 ];
 
 export default function GitHubSection() {
-  const ghUsername = personalInfo.githubUsername;
-
   return (
     <section id="github" className="section-padding relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section header */}
-        <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 glass rounded-full text-sm text-zinc-300 border border-zinc-700/40 mb-4">
-            <GithubIcon size={14} />
-            Open Source
-          </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            GitHub{" "}
-            <span className="gradient-text">Activity</span>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
+          className="mb-20"
+        >
+          <p className="section-label mb-3">05 — Open Source</p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#f8fafc] mb-5" style={{ fontFamily: "var(--font-jakarta)" }}>
+            GitHub Activity
           </h2>
-          <p className="text-zinc-500 max-w-lg mx-auto">
-            Consistent contributions — building in public, learning in the open.
-          </p>
+          <p className="text-[#475569]">Consistent contributions — building in public, learning in the open.</p>
         </motion.div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-          {stats.map(({ label, value, icon }, i) => (
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+          {stats.map(({ label, value, icon: Icon }, i) => (
             <motion.div
               key={label}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              whileHover={{ scale: 1.03, y: -3 }}
-              className="glass rounded-2xl p-5 border border-zinc-800/60 text-center"
+              transition={{ delay: i * 0.08, duration: 0.5 }}
+              whileHover={{ y: -5, scale: 1.03 }}
+              className="glass-card p-6 gradient-border group hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-500"
             >
-              <div className="text-3xl mb-2">{icon}</div>
-              <div className="text-3xl font-bold text-white mb-1">{value}</div>
-              <div className="text-zinc-500 text-xs">{label}</div>
+              <div className="w-9 h-9 gradient-bg rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-orange-500/20">
+                <Icon size={16} className="text-white" />
+              </div>
+              <div className="text-3xl font-black gradient-text mb-1" style={{ fontFamily: "var(--font-jakarta)" }}>{value}</div>
+              <div className="text-[#475569] text-xs font-medium">{label}</div>
             </motion.div>
           ))}
         </div>
 
-        {/* Contribution Graph */}
+        {/* Contribution graph */}
         <motion.div
-          {...fadeUp}
-          transition={{ duration: 0.6 }}
-          className="glass rounded-2xl border border-zinc-800/60 overflow-hidden mb-10"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="glass-card overflow-hidden mb-8"
         >
-          <div className="px-6 py-4 border-b border-zinc-800/60 flex items-center justify-between">
-            <div className="flex items-center gap-2 text-zinc-300 font-semibold">
-              <Activity size={16} className="text-green-400" />
-              Contribution Activity
+          <div className="flex items-center justify-between px-6 py-4 border-b border-[rgba(255,255,255,0.04)]">
+            <div className="flex items-center gap-2">
+              <GithubIcon size={16} className="text-[#475569]" />
+              <span className="text-sm font-semibold text-[#94a3b8]" style={{ fontFamily: "var(--font-jakarta)" }}>
+                {personalInfo.githubUsername}
+              </span>
             </div>
             <a
               href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-500 hover:text-zinc-300 text-sm flex items-center gap-1 transition-colors"
+              className="flex items-center gap-1.5 text-xs text-[#475569] hover:text-[#94a3b8] transition-colors link-underline"
             >
-              View on GitHub
-              <ExternalLink size={12} />
+              View on GitHub <ExternalLink size={11} />
             </a>
           </div>
-          <div className="p-4">
-            {/* GitHub contribution graph embed */}
-            <div className="rounded-xl overflow-hidden">
-              <img
-                src={`https://ghchart.rshah.org/2563eb/${ghUsername}`}
-                alt="GitHub Contribution Graph"
-                className="w-full h-auto opacity-90 hover:opacity-100 transition-opacity"
-                style={{ imageRendering: "pixelated", filter: "brightness(0.9) contrast(1.1)" }}
-              />
-            </div>
+          <div className="p-6">
+            <img
+              src={`https://ghchart.rshah.org/8b5cf6/${personalInfo.githubUsername}`}
+              alt="GitHub Contribution Graph"
+              className="w-full h-auto opacity-60 hover:opacity-80 transition-opacity"
+              style={{ imageRendering: "pixelated" }}
+            />
           </div>
         </motion.div>
 
-        {/* Pinned Repositories */}
-        <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="mb-8">
-          <h3 className="text-xl font-bold text-white mb-5 flex items-center gap-2">
-            📌 Pinned Repositories
-          </h3>
-          <div className="grid sm:grid-cols-2 gap-4">
-            {pinnedRepos.map((repo, i) => (
-              <motion.a
-                key={repo.name}
-                href={repo.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                whileHover={{ scale: 1.02, y: -3 }}
-                className="glass rounded-xl p-5 border border-zinc-800/60 hover:border-zinc-700/60 block transition-all duration-200 group"
-              >
-                <div className="flex items-start justify-between mb-2">
-                  <div className="flex items-center gap-2">
-                    <GithubIcon size={16} className="text-zinc-400 group-hover:text-white transition-colors" />
-                    <span className="font-semibold text-zinc-200 group-hover:text-white transition-colors text-sm">
-                      {repo.name}
-                    </span>
-                  </div>
-                  <ExternalLink size={14} className="text-zinc-600 group-hover:text-zinc-400 transition-colors flex-shrink-0" />
+        {/* Pinned repos */}
+        <div className="grid sm:grid-cols-2 gap-4 mb-10">
+          {pinnedRepos.map((repo, i) => (
+            <motion.a
+              key={repo.name}
+              href={`https://github.com/${personalInfo.githubUsername}/${repo.name}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08, duration: 0.5 }}
+              whileHover={{ y: -4 }}
+              className="glass-card p-5 gradient-border group hover:shadow-xl hover:shadow-orange-500/10 block transition-all duration-500"
+            >
+              <div className="flex items-start justify-between mb-3">
+                <div className="flex items-center gap-2">
+                  <GithubIcon size={14} className="text-[#475569] group-hover:text-[#94a3b8] transition-colors" />
+                  <span className="font-bold text-[#94a3b8] group-hover:gradient-text text-sm transition-all" style={{ fontFamily: "var(--font-jakarta)" }}>
+                    {repo.name}
+                  </span>
                 </div>
-
-                <p className="text-zinc-500 text-xs leading-relaxed mb-4">{repo.description}</p>
-
-                <div className="flex items-center gap-4 text-xs text-zinc-500">
-                  <div className="flex items-center gap-1">
-                    <span
-                      className="w-2.5 h-2.5 rounded-full flex-shrink-0"
-                      style={{ backgroundColor: repo.langColor }}
-                    />
-                    {repo.language}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Star size={11} />
-                    {repo.stars}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <GitFork size={11} />
-                    {repo.forks}
-                  </div>
+                <ExternalLink size={13} className="text-[#2a2a3a] group-hover:text-[#475569] transition-colors flex-shrink-0" />
+              </div>
+              <p className="text-[#2a2a3a] text-xs leading-relaxed mb-4 group-hover:text-[#475569] transition-colors">{repo.desc}</p>
+              <div className="flex items-center gap-4 text-xs text-[#2a2a3a]">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: repo.color }} />
+                  {repo.lang}
                 </div>
-              </motion.a>
-            ))}
-          </div>
-        </motion.div>
+                <div className="flex items-center gap-1"><Star size={11} /> {repo.stars}</div>
+                <div className="flex items-center gap-1"><GitFork size={11} /> {repo.forks}</div>
+              </div>
+            </motion.a>
+          ))}
+        </div>
 
-        {/* CTA */}
         <motion.div
-          {...fadeUp}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           className="text-center"
         >
           <motion.a
             href={personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-6 py-3 glass border border-zinc-700/60 hover:border-zinc-500/60 text-zinc-300 hover:text-white rounded-xl font-semibold transition-all duration-200"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            className="inline-flex items-center gap-2 px-6 py-3 gradient-bg rounded-xl text-white text-sm font-semibold shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300"
           >
-            <GithubIcon size={18} />
+            <GithubIcon size={15} />
             View All Repositories
-            <ExternalLink size={14} />
+            <ExternalLink size={13} />
           </motion.a>
         </motion.div>
       </div>
